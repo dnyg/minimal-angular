@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import * as $ from 'jquery';
+import { AfterViewInit, Component, ElementRef, NgZone, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: '<div #container></div>'
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements AfterViewInit {
+  @ViewChild('container') element: ElementRef;
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      ($(this.element.nativeElement) as any).fullCalendar();
+    });
+  }
 }
