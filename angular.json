@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-test": {
+    "minimal-angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-test",
+            "outputPath": "dist/minimal-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -37,30 +37,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-test:build"
+            "browserTarget": "minimal-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-test:build:production"
+              "browserTarget": "minimal-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-test:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [],
-            "scripts": [],
-            "assets": []
+            "browserTarget": "minimal-angular:build"
           }
         },
         "lint": {
@@ -78,5 +66,5 @@
       }
     },
   },
-  "defaultProject": "ng-test"
+  "defaultProject": "minimal-angular"
 }
